@@ -1,0 +1,28 @@
+# merged on top of Harbor's base compose; `main` is the agent container.
+services:
+  main:
+    build:
+      args:
+        INSTALL_AGENT: ${FESE_INSTALL_AGENT:-0}
+    depends_on:
+      replay:
+        condition: service_healthy
+  replay:
+    build:
+      context: ./replay
+    environment:
+      REPLAY_VERIFIER_TOKEN: "3ccdcbe11200b2efc9fffd689a1c71364a27969ec9f93e13"
+      REPLAY_TASK_NAME: "fese-lowse-full-run"
+    expose:
+      - "8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"]
+      interval: 2s
+      timeout: 5s
+      retries: 20
+      start_period: 3s

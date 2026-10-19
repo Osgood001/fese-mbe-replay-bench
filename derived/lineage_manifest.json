@@ -1,0 +1,55 @@
+{
+ "raw_trace": {
+  "file": "low_se_test-1012-20261012.json",
+  "sha256": "e05e8fed3b1edbb5db7e59d5869bb12c5b02c93ba48998ba051268dbdc0e0e60",
+  "bytes": 2071502,
+  "export": "Hermes agent session export, exported_at 2026-10-12T11:39:29.824Z, session 20261012_153606_4bd2ce, 283 messages (17 user/94 assistant/172 tool), 15:36:51-17:19:26 local"
+ },
+ "repo_pin": {
+  "repo": "github.com/Osgood001/fese-rheed-lab (private)",
+  "commit": "0fa09906ed94177b7fef4db562c234164483dee2",
+  "date": "2026-07-21",
+  "note": "CLI/devices/virtual lab; contains no 1012 data; run used local fork fese-rheed-lab-no-analysis-20260717 (Windows lab PC) - not available"
+ },
+ "classes": {
+  "measured_real": {
+   "desc": "values printed by real instruments/analysis software during the run, quoted verbatim in tool outputs",
+   "items": {
+    "rheed_cnn_frames": 159,
+    "rheed_w3d_frames": 242,
+    "temperature_readings": 173,
+    "hardware_actions_with_ack": 15
+   },
+   "caveat": "CNN/W3D are software-derived features of real RHEED images (EfficientNet-V2-S CNN; W3D convexity probe); the images themselves are NOT in the trace"
+  },
+  "derived_by_us": [
+   "decision windows (SOP thresholds applied to measured series)",
+   "layer count = 0.2 layer/min x Fe-open time (SOP nominal rate, not a thickness measurement)",
+   "diagnose targets"
+  ],
+  "referred_not_measured": [
+   "prior runs 0811/0812 (numbers quoted in SOP text only)",
+   "film quality / Tc / thickness (never measured in trace)"
+  ],
+  "simulated": "none - no surrogate model is used; unlogged branches are rejected"
+ },
+ "unavailable": [
+  "RHEED images (~416 frames, 800x800)",
+  "rheed_w3d_full.log (405 frames) and cnn_rerun_batch.json (416 frames) on lab PC",
+  "实验记录.md final version",
+  "MBE controller raw logs"
+ ],
+ "quality_issues": {
+  "w3d_value_conflicts": [],
+  "truncation_only_duplicates": 14,
+  "note": "An earlier extractor version spliced values from a later frame on the same output line into two records (16:32:19, 16:38:55); fixed 2026-10-19; served data unchanged (verified identical)."
+ },
+ "derived_files": {
+  "derived/measured_extracted.json": "381ee379546e4af3102b639eb6f6ffa4e06ee725286011183903808e293b18e4",
+  "derived/replay_dataset_1012.json": "bb5b63010e155f33d6313f5ad1e04dcfcd2c59ca837471cf5f23a1e32deb0c97",
+  "data_private/decision_points.json": "194a8ad8181a99d8c06bec80eb8b8c2d63ac15d2e0e8cf0e8a4c66ec727e0e68",
+  "scripts/extract_measured.py": "24e2b95b9262e75c0bd5fd452607a7daa07dc04d977713ad0cbf68c8461e9bc7",
+  "scripts/build_dataset.py": "e448304f4a49eded3835aaa1eb696cebc705c114be9f983c431ea23a55f4673b",
+  "scripts/decision_points.py": "4bcea8211f32eaa564f1d985deb5d60c60b4731ca872e2f91628a661a192a3df"
+ }
+}

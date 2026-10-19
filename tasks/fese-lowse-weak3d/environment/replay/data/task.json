@@ -1,0 +1,32 @@
+{
+ "mode": "control",
+ "start": "16:36:12",
+ "decisions": [
+  "D4",
+  "D5"
+ ],
+ "max_queries": 300,
+ "initial_state": {
+  "shutter": {
+   "fe": "open",
+   "sec": "open"
+  },
+  "sp": {
+   "fe": 1100.0,
+   "sec": 560.0,
+   "seb": 90.0
+  },
+  "fe_intervals": [
+   [
+    58972.0,
+    59176.0
+   ],
+   [
+    59771.0,
+    null
+   ]
+  ]
+ },
+ "name": "fese-lowse-weak3d",
+ "data_end": "17:19:06"
+}

@@ -1,0 +1,31 @@
+{
+ "mode": "control",
+ "start": "16:22:53",
+ "decisions": [
+  "D1",
+  "D2",
+  "D3",
+  "D4",
+  "D5"
+ ],
+ "max_queries": 500,
+ "initial_state": {
+  "shutter": {
+   "fe": "open",
+   "sec": "open"
+  },
+  "sp": {
+   "fe": 1100.0,
+   "sec": 520.0,
+   "seb": 90.0
+  },
+  "fe_intervals": [
+   [
+    58972.0,
+    null
+   ]
+  ]
+ },
+ "name": "fese-lowse-full-run",
+ "data_end": "17:19:06"
+}

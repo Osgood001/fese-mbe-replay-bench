@@ -1,0 +1,144 @@
+{
+ "decision_points": [
+  {
+   "id": "D1",
+   "name": "strong-3D: close Fe and SeC +20",
+   "required": [
+    [
+     "fe-close",
+     null
+    ],
+    [
+     "set-sec",
+     540
+    ]
+   ],
+   "sop_valid_alternatives": [],
+   "window_open": 59101.702,
+   "trigger_first_frame": 59095.701,
+   "boundary": 59176.0,
+   "snap_to": 59176.0,
+   "rule": "CNN p3D>0.5 on 2 consecutive analysed frames",
+   "window_open_hms": "16:25:02",
+   "trigger_first_frame_hms": "16:24:56",
+   "boundary_hms": "16:26:16",
+   "snap_to_hms": "16:26:16"
+  },
+  {
+   "id": "D2",
+   "name": "540 insufficient: SeC +20 to 560",
+   "required": [
+    [
+     "set-sec",
+     560
+    ]
+   ],
+   "sop_valid_alternatives": [],
+   "window_open": 59270.0,
+   "boundary": 59466.0,
+   "snap_to": 59466.0,
+   "rule": "SeC PV within 1 C of 540 and 2D not recovered (p2D<0.9)",
+   "window_open_hms": "16:27:50",
+   "boundary_hms": "16:31:06",
+   "snap_to_hms": "16:31:06"
+  },
+  {
+   "id": "D3",
+   "name": "2D recovered at 560: reopen Fe",
+   "required": [
+    [
+     "fe-open",
+     null
+    ]
+   ],
+   "sop_valid_alternatives": [],
+   "window_open": 59689.754,
+   "trigger_first_frame": 59647.726,
+   "boundary": 59771.0,
+   "snap_to": 59771.0,
+   "rule": "5 consecutive analysed frames with p2D>0.9 and p3D<0.1",
+   "window_open_hms": "16:34:50",
+   "trigger_first_frame_hms": "16:34:08",
+   "boundary_hms": "16:36:11",
+   "snap_to_hms": "16:36:11"
+  },
+  {
+   "id": "D4",
+   "name": "weak-3D (CNN blind): SeC +5..10",
+   "required": [
+    [
+     "set-sec",
+     570
+    ]
+   ],
+   "sop_valid_alternatives": [
+    [
+     "set-sec",
+     565
+    ],
+    [
+     "set-sec",
+     566
+    ],
+    [
+     "set-sec",
+     567
+    ],
+    [
+     "set-sec",
+     568
+    ],
+    [
+     "set-sec",
+     569
+    ]
+   ],
+   "window_open": 60037.631,
+   "trigger_first_frame": 60013.62,
+   "boundary": 60111.0,
+   "snap_to": 60111.0,
+   "rule": "W3D>0.10 on 5 consecutive analysed frames while CNN p3D<0.3",
+   "window_open_hms": "16:40:38",
+   "trigger_first_frame_hms": "16:40:14",
+   "boundary_hms": "16:41:51",
+   "snap_to_hms": "16:41:51"
+  },
+  {
+   "id": "D5",
+   "name": "stop at 5 layers (Fe cumulative 25 min)",
+   "required": [
+    [
+     "fe-close",
+     null
+    ],
+    [
+     "sec-close",
+     null
+    ]
+   ],
+   "sop_valid_alternatives": [],
+   "window_open": null,
+   "boundary": 61069.0,
+   "snap_to": null,
+   "rule": "Fe-open cumulative minutes x 0.2 = 5 layers; stop is terminal, not snapped",
+   "boundary_hms": "16:57:49"
+  }
+ ],
+ "fe_open_logged": [
+  [
+   58972.0,
+   59176.0
+  ],
+  [
+   59771.0,
+   61069.0
+  ]
+ ],
+ "growth_rate_layers_per_min": 0.2,
+ "target_layers": 5.0,
+ "standby": {
+  "fe": 800.0,
+  "sec": 400.0,
+  "seb": 48.7
+ }
+}

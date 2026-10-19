@@ -1,0 +1,22 @@
+[
+ {
+  "task": "fese-lowse-weak3d",
+  "agent": "oracle",
+  "reward": 0.9999
+ },
+ {
+  "task": "fese-lowse-diagnose",
+  "agent": "oracle",
+  "reward": 1.0
+ },
+ {
+  "task": "fese-lowse-full-run",
+  "agent": "oracle",
+  "reward": 0.9999
+ },
+ {
+  "task": "fese-lowse-weak3d",
+  "agent": "nop",
+  "reward": 0.0
+ }
+]

@@ -1,0 +1,29 @@
+{
+ "mode": "diagnose",
+ "start": "17:19:06",
+ "decisions": [],
+ "max_queries": 16,
+ "initial_state": {
+  "shutter": {
+   "fe": "closed",
+   "sec": "closed"
+  },
+  "sp": {
+   "fe": 800.0,
+   "sec": 400.0,
+   "seb": 48.7
+  },
+  "fe_intervals": [
+   [
+    58972.0,
+    59176.0
+   ],
+   [
+    59771.0,
+    61069.0
+   ]
+  ]
+ },
+ "name": "fese-lowse-diagnose",
+ "data_end": "17:19:06"
+}
